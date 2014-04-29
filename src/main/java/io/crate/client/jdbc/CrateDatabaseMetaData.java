@@ -853,7 +853,7 @@ public class CrateDatabaseMetaData implements DatabaseMetaData {
 
     @Override
     public ResultSet getTypeInfo() throws SQLException {
-        String[] cols = new String[10];
+        String[] cols = new String[18];
         cols[0] = "TYPE_NAME";
         cols[1] = "DATA_TYPE";
         cols[2] = "PRECISION";
