@@ -103,7 +103,7 @@ public class CrateStatement implements Statement {
 
     @Override
     public SQLWarning getWarnings() throws SQLException {
-        throw new SQLFeatureNotSupportedException("Statement getWarnings not supported");
+        return null;
     }
 
     @Override
@@ -123,7 +123,7 @@ public class CrateStatement implements Statement {
             return false;
         }
         resultSet = new CrateResultSet(this, sqlResponse);
-        return resultSet.next();
+        return true; // TODO: fix return value
     }
 
     @Override
