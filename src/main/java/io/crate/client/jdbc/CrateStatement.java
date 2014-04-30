@@ -34,10 +34,6 @@ public class CrateStatement implements Statement {
     public CrateStatement(CrateConnection connection) {
         this.connection = connection;
     }
-    public CrateStatement(CrateConnection connection, ResultSet resultSet) {
-        this(connection);
-        this.resultSet = resultSet;
-    }
 
     @Override
     public ResultSet executeQuery(String sql) throws SQLException {
@@ -130,11 +126,6 @@ public class CrateStatement implements Statement {
     public ResultSet getResultSet() throws SQLException {
         checkClosed();
         return resultSet;
-    }
-
-    public void setResultSet(ResultSet resultSet) throws SQLException {
-        checkClosed();
-        this.resultSet = resultSet;
     }
 
     @Override
